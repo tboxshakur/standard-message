@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "com.example.protobuf";
+option java_outer_classname = "UserProtos";
+message UserMessage {
+//	string id = 1;
+	string email = 2;
+	string first_name = 3;
+	string last_name = 4;
+	string password_hash = 5;
+	string title = 6;
+	bool is_admin = 7;
+}

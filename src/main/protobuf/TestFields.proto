@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option java_package = "com.example.protobuf";
+option java_outer_classname = "TestFieldsProtos";
+message TestFieldsMessage {
+	string id_string = 1;
+	int32 int_test = 2;
+	int64 long_test = 3;
+	double double_test = 4;
+	bool boolean_test = 5;
+	bytes test_byte_string = 6;
+	message InnerMessage {
+		string id_string = 1;
+		int32 int_test = 2;
+		int64 long_test = 3;
+		double double_test = 4;
+		bool boolean_test = 5;
+		bytes test_byte_string = 6;
+	}
+
+	repeated InnerMessage inner_messages = 7;
+	enum Corpus {
+		UNIVERSAL = 0;
+		WEB = 1;
+		IMAGES = 2;
+		LOCAL = 3;
+		NEWS = 4;
+		PRODUCTS = 5;
+		VIDEO = 6;
+	}
+
+	Corpus corpus = 8;
+	map < string, Corpus > projects = 9;
+	string id = 10;
+}

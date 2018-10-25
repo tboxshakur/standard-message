@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package example;
+
+option java_package = "com.example.protobuf";
+option java_outer_classname = "AddressBookProtos";
+import public "Person.proto";
+message AddressBookMessage {
+
+	repeated PersonMessage people = 2;
+	string id = 3;
+}

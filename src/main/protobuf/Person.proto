@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package example;
+
+option java_package = "com.example.protobuf";
+option java_outer_classname = "PersonProtos";
+message PersonMessage {
+	string name = 1;
+	int32 id = 2;
+	string email = 3;
+	enum PhoneType {
+		MOBILE = 0;
+		HOME = 1;
+		WORK = 2;
+	}
+
+	message PhoneNumberMessage {
+		string number = 1;
+		PhoneType type = 2;
+	}
+
+	repeated PhoneNumberMessage phones = 4;
+}
